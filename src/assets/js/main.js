@@ -61,7 +61,11 @@
     $(document).on("click", "li", function () {
       $(".filters-containt li").removeClass("active");
       let id = $(this).attr("id");
-      $(`.filters-containt #${id}`).addClass("active")
+      if (id == undefined) {
+        $(`.filters-containt #all`).addClass("active");
+      }
+      $(`.filters-containt #${id}`).addClass("active");
+
     })
 
     // $(document).on("click", "li, #filters", function () {
@@ -78,7 +82,7 @@
 
     $(document).on("click", "li, #filters", function () {
       var filterValue = $(this).attr("id");
-      filterValue=="all" ? $container.isotope({ filter: '*' }) : $container.isotope({ filter: `.${filterValue}` });
+      filterValue == "all" || filterValue == undefined ? $container.isotope({ filter: '*' }) : $container.isotope({ filter: `.${filterValue}` });
     });
 
     // $(document).on("click", "li, #filters", function () {
@@ -197,7 +201,7 @@
     $(".content-blocks").removeClass("showx");
     $(".menu-item").removeClass("active");
     $(this).addClass("active");
-    $(".inline-menu-container.style2").removeClass("dark");
+    $(".inline-menu-container.style2").removelass("dark");
   });
 
   //Custom Cursor
