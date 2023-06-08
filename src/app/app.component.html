@@ -1,0 +1,70 @@
+<div class="inline-menu-container">
+  <span class="status">Estoy disponible como Freelance</span>
+  <ul class="inline-menu">
+    <li class="about menu-item">Resumen</li>
+    <li class="portfolio menu-item">Portafolio</li>
+    <li class="blog menu-item">Blog</li>
+    <li class="contact menu-item">Contacto</li>
+    <li id="close" class="menu-item"><i class="ion-ios-close-empty"></i></li>
+  </ul>
+</div>
+<section class="home">
+  <div class="bgScroll"></div>
+  <div class="overlay opacity7"></div>
+  <div class="container">
+    <div class="name-block">
+      <div class="name-block-container">
+        <h1><span>Hola, Soy</span>{{data.nombre}}</h1>
+        <h2>{{data.profesion}}</h2>
+        <a target="_blank" [href]="data.linkCV"
+          class="btn btn-download">Descargar CV</a>
+        <ul class="social">
+          <li *ngFor="let datos of data.redes">
+            <a [href]="datos.link" target="_blank">
+              <i class="ion-social-{{datos.nombre}}"></i>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="menu-blocks">
+      <app-resumen></app-resumen>
+      <app-portafolio></app-portafolio>
+      <app-blog></app-blog>
+      <app-contacto></app-contacto>
+    </div>
+    <div class="content-blocks about">
+      <app-resumen-content></app-resumen-content>
+    </div>
+    <div class="content-blocks portfolio">
+      <app-portafolio-content (propagar)="procesaPropagar($event)" (actualizar)="actualizar($event)" *appRecarga="idmenu"></app-portafolio-content>
+    </div>
+    <div class="content-blocks blog">
+      <app-blog-content></app-blog-content>
+    </div>
+    <div class="content-blocks contact">
+      <app-contacto-content></app-contacto-content>
+    </div>
+
+    <div class="content-blocks pop">
+      <div id="close-pop" class="close-pop">Cerrar <i class="ion-ios-close-empty"></i></div>
+      <section class="content" style="padding-top: 20px;"></section>
+      <div class="proyect-data">
+        <h2>{{proyecto.nombre}}</h2>
+        <ul>
+          <li>Categoria: {{proyecto.categoria}}</li>
+          <li>Cliente: {{proyecto.cliente}}</li>
+          <li>Fecha: {{proyecto.fecha}}</li>
+          <li>rol: {{proyecto.rol}}</li>
+          <li><a href="{{proyecto.link}}">preview page</a></li>
+        </ul>
+        <p>{{proyecto.description}}</p>
+        <ul>
+          <li *ngFor="let img of proyecto.imagenes"><img src="{{img}}" alt="{{img}}"></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>

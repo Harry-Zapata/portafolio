@@ -1,0 +1,100 @@
+<section class="content" id="about">
+  <div class="block-content">
+    <h3 class="block-title">Perfil</h3>
+    <h3 class="subheading">¡Hola! soy {{data.nombre}} <strong>{{data.profesion}}</strong></h3>
+    <p>{{data.resumen}}</p>
+    <div class="info-list row">
+      <div class="col-sm-6"><span>Nombre : </span>{{data.nombre}}</div>
+      <div class="col-sm-6"><span>Fecha de Nacimiento : </span>{{data.nacimiento}}</div>
+      <div class="col-sm-6"><span>Dirección : </span> {{data.direccion}}</div>
+      <div class="col-sm-6"><span>Email : </span> {{data.email}}</div>
+      <div class="col-sm-6"><span>Telefono : </span>{{data.telefono}}</div>
+      <div class="col-sm-6"><span>Interes : </span> {{data.interes}}</div>
+    </div>
+  </div>
+  <div class="block-content">
+    <h3 class="block-title">Profesional</h3>
+
+    <div *ngFor="let datos of data.tecnologias">
+      <label class="progress-bar-label">{{datos.nombre}}</label>
+      <div class="progress">
+        <div [ngStyle]="{'width.%':datos.progreso}" class="progress-bar" aria-valuemin="0" aria-valuemax="100"
+          role="progressbar">
+          <span>{{datos.progreso}}%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="block-content" *ngIf="data.experiencia!==null">
+    <h3 class="block-title">Experiencia</h3>
+    <div class="timeline experience">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="exp-holder">
+            <div class="exp" *ngFor="let exp of data.experiencia">
+              <div class="hgroup">
+                <h4><span>{{exp.puesto}}</span> @ {{exp.empresa}}</h4>
+                <h5>{{exp.inicio}} - <span class="current">{{exp.fin}}</span></h5>
+              </div>
+              <p>{{exp.resumen}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block-content" *ngIf="data.educacion!==null">
+    <h3 class="block-title">Educación</h3>
+    <div class="timeline education">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="exp-holder">
+            <div class="exp" *ngFor="let edu of data.educacion">
+              <div class="hgroup">
+                <h4>{{edu.grado}} | <span>{{edu.escuela}}</span></h4>
+                <h5>{{edu.inicio}} - {{edu.fin}}</h5>
+              </div>
+              <p>{{edu.resumen}}</p>
+              <a *ngIf="edu.certificado!==''" [href]="edu.certificado" target="_blank">Certificado</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block-content" *ngIf="data.servicios!==null">
+    <h3 class="block-title">Servicios</h3>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 service" *ngFor="let service of data.servicios">
+        <div class="service-icon">
+          <i class="{{service.icon}}"></i>
+        </div>
+        <h4>{{service.service}}</h4>
+        <p>{{service.resumen}}</p>
+      </div>
+    </div>
+  </div>
+  <!--  
+  <div class="block-content">
+    <h3 class="block-title">Testimonios</h3>
+    <div class="row">
+      <div id="liontestimonial" class="owl-carousel owl-theme">
+        <div class="item testimonials" *ngFor="let test of data.testimonio">
+          <img [src]="test.img" alt="">
+          <blockquote>{{test.testimonio}}
+            <p class="quote"><span>{{test.nombre}}</span> - {{test.puesto}}</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+  <div class="row text-center">
+    <div class="col-md-12 btn-email">
+      <a class="btn uppercase contact menu-item">Contactar</a>
+    </div>
+  </div>
+</section>
