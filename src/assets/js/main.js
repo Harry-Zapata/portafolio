@@ -76,7 +76,10 @@
     //   console.log(clasesG);
     // });
 
-
+    $(document).on("click", "li, #filters", function () {
+      var filterValue = $(this).attr("id");
+      filterValue=="all" ? $container.isotope({ filter: '*' }) : $container.isotope({ filter: `.${filterValue}` });
+    });
 
     // $(document).on("click", "li, #filters", function () {
     //   $("#filters li").removeClass("active");

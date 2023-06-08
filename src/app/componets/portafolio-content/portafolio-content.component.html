@@ -6,15 +6,14 @@
         <div class="filters">
           <span>Filters :</span>
           <ul class="filters-containt">
-            <li class="active" id="all" (click)="filtro($event.target)">All</li>
-            <li *ngFor="let item of menu" id={{item}} (click)="filtro($event.target)">{{item}}</li>
+            <li class="active" id="all">All</li>
+            <li *ngFor="let item of menu" id={{item}}>{{item}}</li>
           </ul>
         </div>
         <div class="portfolio-container row isotope" id="portfolio-container">
           <!-- WORK 1 START -->
           <ng-container *ngFor="let proyect of data.proyectos">
-            <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item {{proyect.filtro}}" 
-            *ngIf="menuid=='1' || menuid==proyect.filtro">
+            <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item {{proyect.filtro}}">
               <a class="open-project" href="{{proyect.href}}" (click)="emit(proyect.data)">
                 <div class="portfolio-column">
                   <div class="portfolio-hover">

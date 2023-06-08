@@ -39,14 +39,7 @@ export class AppComponent {
       },
     ]
   }
-  idmenu!: string;
-  actualizar(id:string){
-    console.log("ejecutando la funcion actualizar principal");
-    console.log(id);
-    this.idmenu=id;
-  }
   procesaPropagar(mensaje: any) {
-    console.log("ejecutando la funcion propagar principal");
     this.proyecto = mensaje;
   }
 }

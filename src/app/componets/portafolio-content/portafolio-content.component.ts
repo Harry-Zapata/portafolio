@@ -8,16 +8,12 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 export class PortafolioContentComponent implements OnInit {
   ngOnInit(): void {
     this.menuFiltro();
-    console.log("ejecutando la ngoninit");
   }
 
   @Output()
   propagar = new EventEmitter<any>();
-  @Output() actualizar= new EventEmitter<any>();
   emit(data: any) {
     this.propagar.emit(data);
-    console.log("ejecutando la funcion emit");
-    
   }
   data = {
     proyectos: [
@@ -161,17 +157,9 @@ export class PortafolioContentComponent implements OnInit {
     ]
   }
 
-  menuid="1";
-  filtro(element:any){
-    console.log("ejecutando la funcion filtro");
-    let id = element.id;
-    id =="all" ? this.menuid="1" : this.menuid=id;
-    this.actualizar.emit(this.menuid);
-  }
-
+ 
   menu: Array<string> = []
   menuFiltro() {
-    console.log("ejecutando la funcion menufiltro");
     this.data.proyectos.forEach(element => {
       this.menu.push(element.filtro)
     });

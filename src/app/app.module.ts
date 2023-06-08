@@ -5,10 +5,9 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ComponetsModule } from './componets/componets.module';
 import { CommonModule } from '@angular/common';
-import { RecargaDirective } from './directive/recarga.directive';
 
 @NgModule({
-  declarations: [AppComponent, RecargaDirective],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule,ComponetsModule,CommonModule],
   providers: [],
   bootstrap: [AppComponent],
