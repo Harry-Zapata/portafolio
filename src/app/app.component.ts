@@ -1,13 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PrincipalService } from './services/principal.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Portafolio';
-
+  constructor(private _principalService:PrincipalService ){}
+  ngOnInit(): void {
+    this.obtenerData();
+  }
+  obtenerData(){
+    this._principalService.getPrincipal().subscribe(data=>{
+      this.data=data[0];
+    },error=>{
+      console.log(error);
+    })
+    this._principalService.getRedes().subscribe(data=>{
+      this.redes=data;
+    },error=>{
+      console.log(error);
+    })
+  }
+  
+  data={
+    nombre:"",
+    linkCV:"",
+    profesion:""
+  };
+  redes=[{nombre:"",link:""}]
   proyecto = {
     nombre: "",
     categoria: "",
@@ -16,30 +39,10 @@ export class AppComponent {
     fecha:"",
     description: "",
     link:"",
-    imagenes: [
-
-    ]
+    imagenes: []
   };
-  data = {
-    nombre: "Harry zapata",
-    profesion: "Desarrollador Web FrontEnd",
-    linkCV: "https://drive.google.com/file/d/135S79bccxYnnihhYYx1vpVAwj2Yt0sgg/view?usp=share_link",
-    redes: [
-      {
-        nombre: "linkedin",
-        link: "https://www.linkedin.com/in/harryzapata21/"
-      },
-      {
-        nombre: "github",
-        link: "https://github.com/Harry-2112"
-      },
-      {
-        nombre: "whatsapp",
-        link: "https://wa.me/51904961437"
-      },
-    ]
-  }
-  procesaPropagar(mensaje: any) {
-    this.proyecto = mensaje;
+  
+  procesaPropagar(objProyecto: any) {
+    this.proyecto = objProyecto;
   }
 }

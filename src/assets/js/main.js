@@ -57,43 +57,19 @@
     });
 
 
-    /**Quitar y activar class active */
+    /**controlador del filtro portafolio */
     $(document).on("click", "li", function () {
       $(".filters-containt li").removeClass("active");
       let id = $(this).attr("id");
-      if (id == undefined) {
+      if (id == "all" || id == undefined) {
+        $container.isotope({ filter: '*' })
         $(`.filters-containt #all`).addClass("active");
+        return
       }
+      $container.isotope({ filter: `.${id}` });
       $(`.filters-containt #${id}`).addClass("active");
-
     })
-
-    // $(document).on("click", "li, #filters", function () {
-    //   let id = $(this).attr("id");
-    //   let array = $container[0].children;
-    //   let clasesG = []
-    //   for (let i = 0; array.length > i; i++) {
-    //     let element = array[i];
-    //     let clases = element.classList;
-    //     clasesG.push(clases)
-    //   }
-    //   console.log(clasesG);
-    // });
-
-    $(document).on("click", "li, #filters", function () {
-      var filterValue = $(this).attr("id");
-      filterValue == "all" || filterValue == undefined ? $container.isotope({ filter: '*' }) : $container.isotope({ filter: `.${filterValue}` });
-    });
-
-    // $(document).on("click", "li, #filters", function () {
-    //   $("#filters li").removeClass("active");
-    //   $(this).addClass("active");
-    //   var filterValue = $(this).attr("data-filter");
-    //   $container.isotope({ filter: filterValue });
-    // });
   });
-
-
 
   // Typing Animation (Typed.js)
   $("#element").typed({
@@ -147,6 +123,7 @@
     $(".content-blocks").removeClass("showx");
     $(".content-blocks.about").addClass("showx");
     $(".menu-item").removeClass("active");
+    
     $(".menu-item.about").addClass("active");
   });
   //On Click Open Portfolio Block
@@ -156,7 +133,10 @@
     function () {
       $(".content-blocks").removeClass("showx");
       $(".content-blocks.portfolio").addClass("showx");
+      //Iniciar filtro con selector all
       $(".menu-item").removeClass("active");
+      $("#portfolio-container").isotope({ filter: '*' })
+      $("ul.filters-containt li#all").addClass("active");
       $(".menu-item.portfolio").addClass("active");
     }
   );
@@ -165,6 +145,7 @@
     $(".content-blocks").removeClass("showx");
     $(".content-blocks.blog").addClass("showx");
     $(".menu-item").removeClass("active");
+    
     $(".menu-item.blog").addClass("active");
   });
   //On Click Open Contact Block
@@ -172,6 +153,7 @@
     $(".content-blocks").removeClass("showx");
     $(".content-blocks.contact").addClass("showx");
     $(".menu-item").removeClass("active");
+    
     $(".menu-item.contact").addClass("active");
   });
 
@@ -183,6 +165,7 @@
     $(".menu-blocks").removeClass("hidex");
     $(".inline-menu-container").removeClass("showx");
     $(".menu-item").removeClass("active");
+    
   });
   //On Click Close Blog Post And Project Details
   $(document).on("click", "#close-pop", function () {

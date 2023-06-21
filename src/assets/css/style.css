@@ -385,7 +385,7 @@ a:not([href]):not([tabindex]) {
 
 .home .bgScroll {
     animation: 40s linear 0s normal none infinite running bgScroll;
-    background: black url(../images/bg/harry.jpeg) scroll center top;
+    background: black url(../images/bg/1.jpg) scroll center top;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -731,7 +731,7 @@ h2.menu-item:after {
 }
 
 .inline-menu li.active {
-    cursor: text;
+    font-weight: 900;
 }
 
 .inline-menu-container.style2 {
@@ -1475,6 +1475,7 @@ h4.package {
 .filters ul li.active,
 .filters ul li:hover {
     color: #333;
+    font-weight: 900;
 }
 
 .filters ul li:first-child {

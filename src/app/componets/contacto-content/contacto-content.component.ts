@@ -1,15 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ContactoService } from 'src/app/services/contacto.service';
 
 @Component({
   selector: 'app-contacto-content',
   templateUrl: './contacto-content.component.html',
   styleUrls: ['./contacto-content.component.scss']
 })
-export class ContactoContentComponent {
+export class ContactoContentComponent implements OnInit{
+  constructor(private _contactoService:ContactoService){}
+  ngOnInit(): void {
+    this.obtenerData()
+  }
+  obtenerData(){
+    this._contactoService.getContacto().subscribe(data=>{
+      this.data = data[0];
+    },error=>error)
+  }
+  
   data = {
-    direccion: "Jequetepeque, La Libertad, Peru",
-    telefono: "+51 904 961 437",
-    email: "harryzapatasoto@gmail.com"
+    direccion: "",
+    telefono: "",
+    email: ""
   }
 
 }

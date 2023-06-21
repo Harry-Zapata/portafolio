@@ -19,7 +19,7 @@
         <a target="_blank" [href]="data.linkCV"
           class="btn btn-download">Descargar CV</a>
         <ul class="social">
-          <li *ngFor="let datos of data.redes">
+          <li *ngFor="let datos of redes">
             <a [href]="datos.link" target="_blank">
               <i class="ion-social-{{datos.nombre}}"></i>
             </a>
@@ -57,7 +57,7 @@
           <li>Cliente: {{proyecto.cliente}}</li>
           <li>Fecha: {{proyecto.fecha}}</li>
           <li>rol: {{proyecto.rol}}</li>
-          <li><a href="{{proyecto.link}}">preview page</a></li>
+          <li><a target="_blank" href="{{proyecto.link}}">preview page</a></li>
         </ul>
         <p>{{proyecto.description}}</p>
         <ul>
