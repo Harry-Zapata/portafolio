@@ -12,9 +12,8 @@
       <div class="col-sm-6"><span>Interes : </span> {{resumen.interes}}</div>
     </div>
   </div>
-  <div class="block-content">
+  <div class="block-content" *ngIf="tecnologia!==null">
     <h3 class="block-title">Profesional</h3>
-
     <div *ngFor="let datos of tecnologia">
       <label class="progress-bar-label">{{datos.nombre}}</label>
       <div class="progress">
@@ -78,7 +77,7 @@
     </div>
   </div>
   
-  <div class="block-content">
+  <div class="block-content" *ngIf="testimonio!==null">
     <h3 class="block-title">Testimonios</h3>
     <div class="row">
       <div id="liontestimonial" class="owl-carousel owl-theme">
