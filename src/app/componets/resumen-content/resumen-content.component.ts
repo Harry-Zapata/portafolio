@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumenService } from 'src/app/services/resumen.service';
+import { resumen } from '../models/resumen';
+import { tecnologia } from '../models/tecnoligia';
+import { servicios } from '../models/servicios';
+import { testimonio } from '../models/testimonio';
+import { experiencia } from '../models/experiencia';
+import { educacion } from '../models/educacion';
 
 @Component({
   selector: 'app-resumen-content',
@@ -43,12 +49,21 @@ export class ResumenContentComponent implements OnInit{
       console.log(error);
     })
   }
-  resumen={nombre:"",direccion:"",telefono:"",nacimiento:"",email:"",interes:"",profesion:"",resumen:""}
-  tecnologia=[{nombre:"",progreso:0}]
-  experiencia=[{puesto:"",empresa:"",inicio:"",fin:"",resumen:""}]
-  educacion=[{grado:"",escuela:"",inicio:"",fin:"",certificado:"",resumen:""}]
-  testimonio=[{img:"",testimonio:"",nombre:"",puesto:""}]
-  servicios=[{icon:"",service:"",resumen:""}]
+  resumen: resumen={
+    nombre: '',
+    direccion: '',
+    telefono: '',
+    nacimiento: '',
+    email: '',
+    interes: '',
+    profesion: '',
+    resumen: ''
+  };
+  tecnologia:tecnologia[]=[]
+  experiencia:experiencia[]=[]
+  educacion:educacion[]=[]
+  testimonio:testimonio[]=[]
+  servicios:servicios[]=[]
   data=[this.tecnologia,this.experiencia,this.educacion,this.testimonio,this.servicios]
 
 }

@@ -1,11 +1,12 @@
 (function ($) {
   "use strict";
-
   $(window).on("load", function () {
     $(".preloader").fadeOut("slow", function () {
       $(".preloader-left").addClass("slide-left");
     });
+  });
 
+  $(document).on("click", ".about-block, .menu-item", function () {
     $("#lionhero").owlCarousel({
       animateOut: "fadeOut",
       nav: true,

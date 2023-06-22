@@ -12,7 +12,7 @@
       <div class="col-sm-6"><span>Interes : </span> {{resumen.interes}}</div>
     </div>
   </div>
-  <div class="block-content" *ngIf="tecnologia!==null">
+  <div class="block-content" *ngIf="tecnologia.length!==0">
     <h3 class="block-title">Profesional</h3>
     <div *ngFor="let datos of tecnologia">
       <label class="progress-bar-label">{{datos.nombre}}</label>
@@ -26,7 +26,7 @@
   </div>
 
 
-  <div class="block-content" *ngIf="experiencia!==null">
+  <div class="block-content" *ngIf="experiencia.length!==0">
     <h3 class="block-title">Experiencia</h3>
     <div class="timeline experience">
       <div class="row">
@@ -44,7 +44,7 @@
       </div>
     </div>
   </div>
-  <div class="block-content" *ngIf="educacion!==null">
+  <div class="block-content" *ngIf="educacion.length!==0">
     <h3 class="block-title">Educación</h3>
     <div class="timeline education">
       <div class="row">
@@ -64,7 +64,7 @@
       </div>
     </div>
   </div>
-  <div class="block-content" *ngIf="servicios!==null">
+  <div class="block-content" *ngIf="servicios.length!==0">
     <h3 class="block-title">Servicios</h3>
     <div class="row">
       <div class="col-md-4 col-sm-6 service" *ngFor="let service of servicios">
@@ -77,7 +77,7 @@
     </div>
   </div>
   
-  <div class="block-content" *ngIf="testimonio!==null">
+  <div class="block-content" *ngIf="testimonio.length!==0">
     <h3 class="block-title">Testimonios</h3>
     <div class="row">
       <div id="liontestimonial" class="owl-carousel owl-theme">
