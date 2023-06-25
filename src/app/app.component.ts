@@ -30,7 +30,7 @@ export class AppComponent implements OnInit{
     linkCV:"",
     profesion:""
   };
-  redes=[{nombre:"",link:""}]
+  redes=[{red:"",link:""}]
   proyecto = {
     nombre: "",
     categoria: "",
