@@ -9,15 +9,14 @@
   </ul>
 </div>
 <section class="home">
-  <div class="bgScroll"></div>
+  <div class="bgScroll" [ngStyle]="bgStyle"></div>
   <div class="overlay opacity7"></div>
   <div class="container">
     <div class="name-block">
       <div class="name-block-container">
         <h1><span>Hola, Soy</span>{{data.nombre}}</h1>
         <h2>{{data.profesion}}</h2>
-        <a target="_blank" [href]="data.linkCV"
-          class="btn btn-download">Descargar CV</a>
+        <a target="_blank" [href]="data.linkCV" class="btn btn-download">Descargar CV</a>
         <ul class="social">
           <li *ngFor="let datos of redes">
             <a [href]="datos.link" target="_blank">
