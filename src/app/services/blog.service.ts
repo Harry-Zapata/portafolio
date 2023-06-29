@@ -9,6 +9,6 @@ export class BlogService {
 
   constructor(private http:HttpClient) { }
   getContacto():Observable<any>{
-    return this.http.get("https://portafolioapi-production-956f.up.railway.app/api/blogs")
+    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/blogs")
   }
 }

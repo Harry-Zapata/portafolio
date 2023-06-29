@@ -9,6 +9,6 @@ export class ContactoService {
 
   constructor(private http:HttpClient) { }
   getContacto():Observable<any>{
-    return this.http.get("https://portafolioapi-production-956f.up.railway.app/api/contactos")
+    return this.http.get("https://portafolioapi-production-7707.up.railway.app//api/contactos")
   }
 }
