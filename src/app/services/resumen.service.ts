@@ -9,22 +9,22 @@ export class ResumenService {
 
   constructor(private http:HttpClient) { }
   getResumen():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/resumens")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/resumens")
   }
   getTecnologias():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/tecnologias")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/tecnologias")
   }
   getExperiencias():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/experiencias")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/experiencias")
   }
   getEducacion():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/educacions")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/educacions")
   }
   getServicios():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/servicios")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/servicios")
   }
   getTestimonios():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/testimonios")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/testimonios")
   }
   
   

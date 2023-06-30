@@ -9,6 +9,6 @@ export class PortafolioService {
 
   constructor(private http:HttpClient) {}
   getProyectos():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/portafolios")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/portafolios")
   }
 }

@@ -9,9 +9,9 @@ export class PrincipalService {
 
   constructor(private http:HttpClient) { }
   getPrincipal():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/principals")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/principals")
   }
   getRedes():Observable<any>{
-    return this.http.get("https://portafolioapi-production-7707.up.railway.app/api/redes")
+    return this.http.get("https://portafolioapi-production-d9f3.up.railway.app/api/redes")
   }
 }
