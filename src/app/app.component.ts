@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
         'background-repeat': 'no-repeat',
         'background-size': 'cover'
       }
+      console.log(data[0]);
+
     }, error => {
       console.log(error);
     })
@@ -33,7 +35,7 @@ export class AppComponent implements OnInit {
   }
   data = {
     nombre: "",
-    linkCV: "",
+    cv: "",
     profesion: "",
     image: {
       public_id: "",

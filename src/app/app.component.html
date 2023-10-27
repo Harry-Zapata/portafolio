@@ -16,7 +16,7 @@
       <div class="name-block-container">
         <h1><span>Hola, Soy</span>{{data.nombre}}</h1>
         <h2>{{data.profesion}}</h2>
-        <a target="_blank" [href]="data.linkCV" class="btn btn-download">Descargar CV</a>
+        <a target="_blank" [href]="data.cv" class="btn btn-download">Descargar CV</a>
         <ul class="social">
           <li *ngFor="let datos of redes">
             <a [href]="datos.link" target="_blank">
