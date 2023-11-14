@@ -9,22 +9,22 @@ export class ResumenService {
 
   constructor(private http:HttpClient) { }
   getResumen():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/resumens")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/resumens")
   }
   getTecnologias():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/tecnologias")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/tecnologias")
   }
   getExperiencias():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/experiencias")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/experiencias")
   }
   getEducacion():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/educacions")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/educacions")
   }
   getServicios():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/servicios")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/servicios")
   }
   getTestimonios():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/testimonios")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/testimonios")
   }
 
 

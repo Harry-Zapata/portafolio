@@ -9,6 +9,6 @@ export class ContactoService {
 
   constructor(private http:HttpClient) { }
   getContacto():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/contactos")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/contactos")
   }
 }

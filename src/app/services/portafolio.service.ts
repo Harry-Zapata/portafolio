@@ -9,6 +9,6 @@ export class PortafolioService {
 
   constructor(private http:HttpClient) {}
   getProyectos():Observable<any>{
-    return this.http.get("https://portafolioapi.onrender.com/api/portafolios")
+    return this.http.get("https://apiventas-1gby.onrender.com/api/portafolios")
   }
 }
